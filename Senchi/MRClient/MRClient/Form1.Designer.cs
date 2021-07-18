@@ -78,7 +78,7 @@
             this.ConnectCheck.Name = "ConnectCheck";
             this.ConnectCheck.Size = new System.Drawing.Size(193, 13);
             this.ConnectCheck.TabIndex = 3;
-            this.ConnectCheck.Text = "CONNECTION ERROR!";
+            this.ConnectCheck.Text = "WAITING CONNECTION..";
             this.ConnectCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConnectCheck.Click += new System.EventHandler(this.ConnectCheck_Click);
             // 
@@ -114,6 +114,7 @@
             this.TextPanel.Name = "TextPanel";
             this.TextPanel.Size = new System.Drawing.Size(386, 423);
             this.TextPanel.TabIndex = 6;
+            this.TextPanel.TextChanged += new System.EventHandler(this.TextPanel_TextChanged);
             // 
             // ipAdd
             // 

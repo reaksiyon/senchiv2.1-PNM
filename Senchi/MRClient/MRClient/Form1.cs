@@ -34,13 +34,13 @@ namespace MRClient
             this.MinimizeBox = false;
 
             TextPanel.ReadOnly = true;
+            System.Threading.Thread.Sleep(1000);
         }
 
 
 
         public void serverConnect()
         {
-
 
             while (client.GetNextMessage(out msg))
                     {
@@ -143,13 +143,18 @@ namespace MRClient
 
         private void connect_Click(object sender, EventArgs e)
         {
-            client.Connect(ipAdd.Text, 1337); // ip address
+            client.Connect(ipAdd.Text.ToString(), 1337); // ip address
 
             System.Threading.Thread.Sleep(1000);
             serverConnect();
         }
 
         private void ConnectCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextPanel_TextChanged(object sender, EventArgs e)
         {
 
         }
