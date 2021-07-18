@@ -20,8 +20,8 @@ namespace MRClient
         public Form1()
         {
             InitializeComponent();
-            this.ActiveControl = textBox3;
-            textBox3.Focus();
+            this.ActiveControl = NickTB;
+            NickTB.Focus();
         }
         Telepathy.Client client = new Telepathy.Client();
         Telepathy.Message msg;
@@ -33,14 +33,8 @@ namespace MRClient
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            client.Connect("88.245.212.22", 1337); // ip girilecek
-            textBox1.ReadOnly = true;
-           
-
-            System.Threading.Thread.Sleep(1000);
-            serverConnect();
-            
-
+            client.Connect(ipAdd.Text, 1337); // ip girilecek
+            TextPanel.ReadOnly = true;
            
         }
 
@@ -57,8 +51,8 @@ namespace MRClient
                         {
                             case Telepathy.EventType.Connected:
                                 Console.WriteLine("Connected");
-                                label1.Text = "BAĞLI!";
-                                label1.ForeColor = Color.Snow;
+                                ConnectCheck.Text = "CONNECTED!";
+                                ConnectCheck.ForeColor = Color.Snow;
                                 
                         break;
                             case Telepathy.EventType.Data: //msj alındığı yer
@@ -66,9 +60,9 @@ namespace MRClient
                         string ascii = Encoding.ASCII.GetString(msg.data);
                     
                         if (!ascii.Contains("cls"))
-                            textBox1.Text += ascii + "\r\n";
+                            TextPanel.Text += ascii + "\r\n";
                         else
-                            textBox1.Text = "";
+                            TextPanel.Text = "";
                         System.Media.SoundPlayer player = new System.Media.SoundPlayer("sounds/nya.wav");
                         player.Play();
 
@@ -76,8 +70,8 @@ namespace MRClient
                         break;
                             case Telepathy.EventType.Disconnected:
                                 Console.WriteLine("Disconnected");
-                                label1.Text = "BAĞLANTI HATASI!";
-                                label1.ForeColor = Color.Snow;
+                                ConnectCheck.Text = "CONNECTION ERROR!";
+                                ConnectCheck.ForeColor = Color.Snow;
                         break;
                         }
 
@@ -95,17 +89,17 @@ namespace MRClient
         // send a message to server
         //   client.Send(new byte[] { 0xFF });
 
-            if(textBox3.Text == "")
+            if(NickTB.Text == "")
             {
-                textBox1.Text += "Sevgili senchi üyemiz, lütfen önce isminizi giriniz :)\r\n";
+                TextPanel.Text += "Dear Senchi member, please enter your nickname :)\r\n";
                 return;
             }
          
-        string msg =  textBox3.Text.ToString() + ": " + textBox2.Text.ToString();
+        string msg =  NickTB.Text.ToString() + ": " + msgTB.Text.ToString();
             byte[] msgc = Encoding.Default.GetBytes(msg);
 
             client.Send(msgc);
-            textBox2.Text = "";
+            msgTB.Text = "";
             serverConnect();
             }
         
@@ -125,23 +119,39 @@ namespace MRClient
             if (e.KeyCode == Keys.Enter)
             {
 
-                if (textBox3.Text == "")
+                if (NickTB.Text == "")
                 {
-                    textBox1.Text += "Sevgili senchi üyemiz, lütfen önce isminizi giriniz :)\r\n";
+                    TextPanel.Text += "Sevgili senchi üyemiz, lütfen önce isminizi giriniz :)\r\n";
                     return;
                 }
 
-                string msg = textBox3.Text.ToString() + ": " + textBox2.Text.ToString();
+                string msg = NickTB.Text.ToString() + ": " + msgTB.Text.ToString();
                 byte[] msgc = Encoding.Default.GetBytes(msg);
 
                 client.Send(msgc);
-                textBox2.Text = "";
+                msgTB.Text = "";
                 serverConnect();
-                textBox2.Focus();
+                msgTB.Focus();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
 
             }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void connect_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(1000);
+            serverConnect();
+        }
+
+        private void ConnectCheck_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
