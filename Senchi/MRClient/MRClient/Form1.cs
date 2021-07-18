@@ -33,9 +33,7 @@ namespace MRClient
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            client.Connect(ipAdd.Text, 1337); // ip girilecek
             TextPanel.ReadOnly = true;
-           
         }
 
 
@@ -55,7 +53,7 @@ namespace MRClient
                                 ConnectCheck.ForeColor = Color.Snow;
                                 
                         break;
-                            case Telepathy.EventType.Data: //msj alındığı yer
+                            case Telepathy.EventType.Data: //msg taken
                             
                         string ascii = Encoding.ASCII.GetString(msg.data);
                     
@@ -145,6 +143,8 @@ namespace MRClient
 
         private void connect_Click(object sender, EventArgs e)
         {
+            client.Connect(ipAdd.Text, 1337); // ip address
+
             System.Threading.Thread.Sleep(1000);
             serverConnect();
         }
