@@ -114,7 +114,6 @@
             this.TextPanel.Name = "TextPanel";
             this.TextPanel.Size = new System.Drawing.Size(386, 423);
             this.TextPanel.TabIndex = 6;
-            this.TextPanel.TextChanged += new System.EventHandler(this.TextPanel_TextChanged);
             // 
             // ipAdd
             // 

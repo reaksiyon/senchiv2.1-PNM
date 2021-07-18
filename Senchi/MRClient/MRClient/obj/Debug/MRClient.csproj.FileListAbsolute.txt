@@ -22,14 +22,3 @@ C:\Users\emir_\source\repos\Senchi\MRClient\MRClient\obj\Debug\MRClient.csproj.C
 C:\Users\emir_\source\repos\Senchi\MRClient\MRClient\obj\Debug\MRClient.csproj.CopyComplete
 C:\Users\emir_\source\repos\Senchi\MRClient\MRClient\obj\Debug\MRClient.exe
 C:\Users\emir_\source\repos\Senchi\MRClient\MRClient\obj\Debug\MRClient.pdb
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\bin\Debug\MRClient.exe.config
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\bin\Debug\MRClient.exe
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\bin\Debug\MRClient.pdb
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.csprojAssemblyReference.cache
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.Form1.resources
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.Properties.Resources.resources
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.csproj.GenerateResource.cache
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.csproj.CoreCompileInputs.cache
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.csproj.CopyComplete
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.exe
-C:\Users\emir_\OneDrive\Masaüstü\senchigit\Senchi\MRClient\MRClient\obj\Debug\MRClient.pdb
